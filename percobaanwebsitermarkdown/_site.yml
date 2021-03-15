@@ -1,0 +1,10 @@
+name: "LEGO"
+navbar:
+  title: "LEGO"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Program"
+      href: ANALISIS.html
+    - text: "About"
+      href: about.html

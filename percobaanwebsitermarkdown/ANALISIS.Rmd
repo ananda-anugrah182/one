@@ -1,0 +1,146 @@
+---
+title: "ANALISIS IMAGE RSTUDIO"
+---
+```{r}
+
+```
+ 
+Ananda Anugrah Kuasa
+ | LINEAR ALGEBRA |
+ | INFORMATIC ENGINEERING |
+ | UIN MALIKI MALANG |
+---
+date : 15-03-2021
+output: html_document
+---
+
+
+EBimages(?)
+ menyediakan fungsionalitas untuk pemrosesan dan analisis gambar. Dalam konteks pengujian seluler berbasis mikroskop (high-throughput). Hal ini memungkinkan otomatisasi tugas tersebut menggunakan bahasa pemrograman R dan memfasilitasi penggunaan alat lain di R untuk pemrosesan sinyal, pemodelan statistik, pembelajaran mesin, dan visualisasi dengan data gambar.
+
+---
+
+## 1. INSTALL PACKAGE
+Instalasi package sangat penting karena berfungsi untuk menjalankan dan memunculkan program sesuai kemauan saat code di inputkan.
+
+
+```{r}
+library(EBImage)
+```
+
+## 2. UPLOAD IMAGE dan ANALISIS
+Library EBImage harus di-import terlebih dahulu agar bisa dijalankan. Kemudian import gambar yang ingin ditampilkan.
+```{r}
+Image <- readImage("Cupang.jpeg")
+display(Image)
+```
+```{r}
+
+print(Image)
+```
+
+
+
+## 3. HISTOGRAM
+```{r}
+hist(Image)
+```
+
+
+
+
+
+
+## 4. KECERAHAN
+```{r}
+Image1 <- Image + 0.2
+Image2 <- Image - 0.2
+par(mfrow= c(1,2))
+plot(Image1)
+plot(Image2)
+```
+
+
+
+## 5. KONTRAS
+```{r}
+Image3 <- Image * 0.5
+Image4 <- Image * 2
+par(mfrow= c(1,2))
+plot(Image3)
+plot(Image4)
+
+```
+
+
+
+## 6. GAMMA
+```{r}
+Image5 <- Image ^ 2
+Image6 <- Image ^ 0.7
+par(mfrow= c(1,2))
+plot(Image5)
+plot(Image6)
+```
+
+
+
+## 7. CROP
+```{r}
+display(Image[189:1000, 100:600,])
+```
+
+
+
+## 8. PERUBAHAN SPASIAL
+```{r}
+Imagetr <- translate(rotate(Image, 45), c(50, 0))
+display(Imagetr)
+
+```
+
+
+
+## 9. WARNA
+```{r}
+colorMode(Image) <- Grayscale
+display(Image)
+```
+```{r}
+## Only the first frame of the image stack is displayed.
+## To display all frames use 'all = TRUE'.
+```
+
+
+```{r}
+print(Image)
+```
+
+
+```{r}
+colorMode(Image) <- Color
+display(Image)
+```
+
+
+
+## 10. FILTER
+
+```{r}
+fLow <- makeBrush(21, shape= 'disc', step=FALSE)^2
+fLow <- fLow/sum(fLow)
+Image.fLow <- filter2(Image, fLow)
+display(Image.fLow)
+```
+
+Sumber :
+
+1. https://thinkstudioo.blogspot.com/2018/03/analisis-image-menggunakan-ebimage-di-r.html
+
+2. https://thinkstudioo.blogspot.com/2018/03/analisis-image-menggunakan-ebimage-di-r_6.html
+```{r}
+
+```
+
+
+

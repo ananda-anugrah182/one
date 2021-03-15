@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>aita.utf8</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">LEGO</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="program.html">Program</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p>title: “Analisis Gambar Menggunakan EBImage” author: “Thoyibatul Aita; Teknik Informatika UIN Maulana Malik Ibrahim Malang || Dosen pengampu : Prof.Dr. Suhartono, M.Kom” date: “14 Maret 2021” output: html_document — EBImage adalah package untuk pengolahan dan analisi gambar pada bahasa R. Pada EBImage gambar bisa diatur kecerahannya, dipotong (crop), diatur rotasinya, hingga diberi tambahan filter. Berikut adalah tata cara menganalisis gambar menggunakan EBImage pada Rstudio.</p>
+<div id="instalasi-package" class="section level2">
+<h2>1) Instalasi Package</h2>
+<p>Instalasi package sangat penting karena berfungsi untuk menjalankan dan memunculkan program sesuai kemauan saat code di inputkan. {r} library(EBImage)</p>
+</div>
+<div id="import-gambar" class="section level2">
+<h2>2) Import Gambar</h2>
+<p>Library EBImage harus di-import terlebih dahulu agar bisa dijalankan. Kemudian import gambar yang ingin ditampilkan. {r} Image &lt;- readImage(‘picture.jpg’) display(Image)</p>
+<p>{r} print(Image)</p>
+</div>
+<div id="histogram-gambar" class="section level2">
+<h2>3) Histogram Gambar</h2>
+<p>{r} hist(Image)</p>
+</div>
+<div id="kecerahan" class="section level2">
+<h2>4) Kecerahan</h2>
+<p>Disini saya mengubah kecerahan gambar dengan menggunakan tanda (+) untuk menambah kecerahan dan (-) untuk mengurangi kecerahan. Saya menambahkan 0.3 dan mengurangi 0.3 untuk intensitasnya. Lalu, plot berfungsi untuk menampilkan kedua gambar tersebut. {r} Image1 &lt;- Image + 0.3 Image2 &lt;- Image - 0.3 par(mfrow= c(1,2)) plot(Image1) plot(Image2)</p>
+</div>
+<div id="penyesuaian-kontras" class="section level2">
+<h2>5) Penyesuaian Kontras</h2>
+<p>Penyesuaian kontras dilakukan dengan menggunakan perkalian dimana Image3 dikali 0.5 dan Image4 dikali 2. {r} Image3 &lt;- Image * 0.5 Image4 &lt;- Image * 2 par(mfrow = c(1,2)) plot(Image3) plot(Image4)</p>
+</div>
+<div id="koreksi-gamma" class="section level2">
+<h2>6) Koreksi Gamma</h2>
+<p>Gamma adalah nama dari sebuah operasi nonlinier yang digunakan untuk code dan decode luminance atau tristimulus nilai-nilai dalam vidio atau sistem gambar. Pada gambar pertama menggunakan nilai 2 dan gambar kedua menggunakan nilai 0.7 dengan pengaplikasian simbol (^). {r} Image5 &lt;- Image ^ 2 Image6 &lt;- Image ^ 0.7 par(mfrow = c(1,2)) plot(Image5) plot(Image6)</p>
+</div>
+<div id="memotong-gambar-cropping" class="section level2">
+<h2>7) Memotong Gambar (Cropping)</h2>
+<p>Code dibawah ini digunakan untuk memotong gambar. Rentang gambar yang saya miliki adalah 563:375, sehingga tidsk boleh melebihi angka itu dalam menginputkan. {r} display(Image[180:300, 100:300,])</p>
+</div>
+<div id="transformasi-spasial" class="section level2">
+<h2>8) Transformasi Spasial</h2>
+<p>Pada transformasi spasial, output akan menampilkan gambar diputar atau dirotasi. {r} Imagetr &lt;- translate(rotate(Image, 45), c(50, 0)) display(Imagetr)</p>
+</div>
+<div id="pengaturan-warna-color-management" class="section level2">
+<h2>9) Pengaturan Warna (Color Management)</h2>
+<p>Dengan pengaturan warna ini, warna gambar akan berubah sesuai dengan warna yang diatur. Di sini, saya menggunakan warna graysicale sehingga nanti warna gambarnya akan menjadi graysicale. {r} colorMode(Image) &lt;- Grayscale display(Image)</p>
+<p>{r} ## Only the first frame of the image stack is displayed. ## To display all frames use ‘all = TRUE’.</p>
+<p>{r} print(Image)</p>
+<p>{r} colorMode(Image) &lt;- Color display(Image)</p>
+</div>
+<div id="filter" class="section level2">
+<h2>10) Filter</h2>
+<p>Pada filter, gambar akan dikaburkan dengan menggunakan low-pass filter dan selanjutnya gambar akan diberi high-pass filter untuk melihat perbedaanya. {r} fLow &lt;- makeBrush(21, shape=‘disc’, step = FALSE)^2 fLow &lt;- fLow/sum(fLow) Image.fLow &lt;- filter2(Image, fLow) display(Image.fLow)</p>
+</div>
+<div id="r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="aita_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
